@@ -23,6 +23,7 @@
   :hook (after-change-major-mode-hook . (lambda () (setopt evil-shift-width tab-width)))
   :config
   (setopt evil-ex-search-vim-style-regexp t
+          evil-ex-substitute-global t
           evil-ex-visual-char-range t  ; column range for ex commands
           evil-mode-line-format 'before
           ;; more vim-like behaviour
