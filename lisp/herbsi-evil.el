@@ -28,16 +28,11 @@
           evil-mode-line-format 'before
           ;; more vim-like behaviour
           evil-symbol-word-search t
-          evil-normal-state-cursor 'box
-          evil-emacs-state-cursor  'box
-          evil-insert-state-cursor 'bar
-          evil-visual-state-cursor 'hollow
           ;; Only do highlighting in selected window so that Emacs has less work
           ;; to do highlighting them all.
           evil-ex-interactive-search-highlight 'selected-window
           evil-kbd-macro-suppress-motion-error t
           evil-undo-system 'undo-fu)
-
   (evil-select-search-module 'evil-search-module 'evil-search)
 
   (evil-mode 1)
@@ -51,6 +46,22 @@
   (dolist (mode '(text-mode prog-mode))
     (evil-set-initial-state mode 'normal))
 
+  ;;;; Define cursor and cursor color
+  ;; use `setq' to surpress the warning from `evil-default-cursor'
+  (setq evil-default-cursor '+evil-default-cursor-fn
+        evil-normal-state-cursor 'box
+        evil-emacs-state-cursor  '(box +evil-emacs-cursor-fn)
+        evil-insert-state-cursor 'bar
+        evil-visual-state-cursor 'hollow)
+
+  (put 'cursor 'evil-emacs-color (face-foreground 'warning))
+  (put 'cursor 'evil-normal-color (face-background 'cursor))
+
+  (defun +evil-default-cursor-fn ()
+    (evil-set-cursor-color (get 'cursor 'evil-normal-color)))
+
+  (defun +evil-emacs-cursor-fn ()
+    (evil-set-cursor-color (get 'cursor 'evil-emacs-color)))
 
   ;;;; Keybindings
   (evil-set-leader '(normal visual motion) (kbd "SPC"))
