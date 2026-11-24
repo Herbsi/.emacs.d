@@ -77,6 +77,12 @@
   (setopt bookmark-save-flag 1)) ; See: http://yummymelon.com/devnull/surprise-and-emacs-defaults.html)
 
 
+;;;; Buffer menu (ibuffer.el)
+
+(use-feature ibuffer
+  :bind ([remap list-buffers] . ibuffer))
+
+
 ;;;; Registers (registers.el)
 
 (use-feature register
