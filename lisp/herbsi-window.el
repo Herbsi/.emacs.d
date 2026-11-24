@@ -61,7 +61,8 @@
 ;;;; ace-window.el
 
 (use-package ace-window
-  :bind (([remap other-window] . ace-window))
+  :bind (([remap other-window] . ace-window)
+         ("M-o" . ace-window))
   :config
   (setopt aw-background nil)
   (setopt aw-dispatch-always nil)
