@@ -59,7 +59,7 @@
 (require 'herbsi-elpaca)
 (require 'herbsi-themes)
 (require 'herbsi-age)
-(require 'herbsi-evil)
+(require 'herbsi-meow)
 (require 'herbsi-essentials)
 (require 'herbsi-completion)
 (require 'herbsi-format)
