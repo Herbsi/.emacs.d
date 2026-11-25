@@ -67,6 +67,7 @@
 (require 'herbsi-environment)
 (require 'herbsi-dired)
 (require 'herbsi-window)
+(require 'herbsi-ghostel)
 (require 'herbsi-git)
 (require 'herbsi-org)
 (require 'herbsi-beancount)
