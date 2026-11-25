@@ -12,11 +12,12 @@
   (setopt meow-cheatsheet-layout meow-cheatsheet-layout-dvorak)
 
   ;; Custom keybindings
-  
   (meow-leader-define-key
    '("/" . consult-ripgrep)
    '("," . consult-buffer)
+   '("<" . consult-project-buffer)
    '("." . find-file)
+   '(">" . project-find-file)
    '("a" . org-agenda)
    '("c" . org-capture)
    '("f" . apheleia-format-buffer)
