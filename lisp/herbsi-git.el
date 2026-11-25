@@ -1,4 +1,4 @@
-;;; herbsi-git.el --- Magit configuration -*- lexical-binding: t -*-
+;;; herbsi-git.el --- Version control configuration -*- lexical-binding: t -*-
 ;;; Commentary:
 ;;; Code:
 
@@ -58,12 +58,6 @@
   :after vc
   :config
   (setopt vc-annotate-display-mode 'scale))
-
-
-(use-package vc-jj
-  :after vc)
-
-
 
 (provide 'herbsi-git)
 ;;; herbsi-git.el ends here
