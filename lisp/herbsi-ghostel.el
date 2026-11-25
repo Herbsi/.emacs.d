@@ -33,6 +33,11 @@
   (ghostel-comint-global-mode +1))
 
 
+(use-package consult-ghostel
+  :after (ghostel consult)
+  :config
+  (consult-ghostel-mode +1))
+
 
 (provide 'herbsi-ghostel)
 ;;; herbsi-ghostel.el ends here
